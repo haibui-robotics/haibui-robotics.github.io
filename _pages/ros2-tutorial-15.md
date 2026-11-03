@@ -5,7 +5,7 @@ permalink: /posts/2026/11/ros2-tutorial-15/
 author_profile: true
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [Bài tiếp theo: Tutorial 16 - Viết bản thiết kế URDF đầu tiên ➡](/posts/2026/11/ros2-tutorial-16/)
 
 ---
 
@@ -59,4 +59,4 @@ Trong video này, tôi sẽ sử dụng một mô hình xe robot đã được t
 
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [Bài tiếp theo: Tutorial 16 - Viết bản thiết kế URDF đầu tiên ➡](/posts/2026/11/ros2-tutorial-16/)
