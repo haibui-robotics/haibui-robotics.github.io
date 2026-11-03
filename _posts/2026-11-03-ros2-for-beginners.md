@@ -74,112 +74,20 @@ ROS 2 sử dụng tiêu chuẩn **DDS (Data Distribution Service)** giúp các t
 
 ## 5. Danh sách Thực hành (Tutorials)
 
-*(Nhấn vào từng bài để đi tới phần hướng dẫn chi tiết, source code và video YouTube tương ứng)*
+*(Nhấn vào từng bài để xem hướng dẫn chi tiết, source code và video YouTube)*
 
-1. [Tutorial 1: Cài đặt và thiết lập môi trường ROS 2 Jazzy](#tutorial-1)
-2. [Tutorial 2: Chạy thử Node ROS 2 đầu tiên (Sử dụng các node có sẵn để test)](#tutorial-2)
-3. [Tutorial 3: Tạo và cấu hình ROS 2 Workspace với colcon](#tutorial-3)
-4. [Tutorial 4: Tạo một ROS 2 Package bằng Python / C++](#tutorial-4)
-5. [Tutorial 5: Viết ROS 2 Node cơ bản bằng Python theo hướng đối tượng (OOP)](#tutorial-5)
-6. [Tutorial 6: Khám phá ROS 2 Topic qua Terminal](#tutorial-6)
-7. [Tutorial 7: Lập trình ROS 2 Publisher](#tutorial-7)
-8. [Tutorial 8: Lập trình ROS 2 Subscriber](#tutorial-8)
-9. [Tutorial 9: Tạo hệ thống vòng kín (Closed-loop) giao tiếp giữa Publisher và Subscriber](#tutorial-9)
-10. [Tutorial 10: Khái niệm và cách kiểm tra ROS 2 Service qua Terminal](#tutorial-10)
-11. [Tutorial 11: Lập trình ROS 2 Service Server & Client bằng Python](#tutorial-11)
-12. [Tutorial 12: Tạo cấu trúc dữ liệu tùy chỉnh (Custom Message & Service - msg, srv)](#tutorial-12)
-13. [Tutorial 13: Khai báo và sử dụng Parameters trong Node](#tutorial-13)
-14. [Tutorial 14: Gom cụm hệ thống với Launch File (Khởi chạy nhiều node cùng lúc)](#tutorial-14)
-15. [(Tùy chọn bổ sung) Tutorial 15: Giới thiệu và lập trình cơ bản ROS 2 Action](#tutorial-15)
-
----
-
-## Chi tiết các bài thực hành (Code & Video)
-
-### <a id="tutorial-1"></a>Tutorial 1: Cài đặt và thiết lập môi trường ROS 2 Jazzy
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-1) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-1/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-2"></a>Tutorial 2: Chạy thử Node ROS 2 đầu tiên (Sử dụng các node có sẵn để test)
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-2) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-2/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-3"></a>Tutorial 3: Tạo và cấu hình ROS 2 Workspace với colcon
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-3) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-3/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-4"></a>Tutorial 4: Tạo một ROS 2 Package bằng Python / C++
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-4) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-4/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-5"></a>Tutorial 5: Viết ROS 2 Node cơ bản bằng Python theo hướng đối tượng (OOP)
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-5) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-5/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-6"></a>Tutorial 6: Khám phá ROS 2 Topic qua Terminal
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-6) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-6/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-7"></a>Tutorial 7: Lập trình ROS 2 Publisher
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-7) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-7/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-8"></a>Tutorial 8: Lập trình ROS 2 Subscriber
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-8) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-8/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-9"></a>Tutorial 9: Tạo hệ thống vòng kín (Closed-loop) giao tiếp giữa Publisher và Subscriber
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-9) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-9/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-10"></a>Tutorial 10: Khái niệm và cách kiểm tra ROS 2 Service qua Terminal
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-10) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-10/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-11"></a>Tutorial 11: Lập trình ROS 2 Service Server & Client bằng Python
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-11) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-11/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-12"></a>Tutorial 12: Tạo cấu trúc dữ liệu tùy chỉnh (Custom Message & Service - msg, srv)
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-12) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-12/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-13"></a>Tutorial 13: Khai báo và sử dụng Parameters trong Node
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-13) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-13/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-14"></a>Tutorial 14: Gom cụm hệ thống với Launch File (Khởi chạy nhiều node cùng lúc)
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-14) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-14/) *(Đang cập nhật)*
-
----
-
-### <a id="tutorial-15"></a>Tutorial 15: Giới thiệu và lập trình cơ bản ROS 2 Action
-* **Video YouTube:** [Xem hướng dẫn trên YouTube](#tutorial-15) *(Đang cập nhật)*
-* **Source Code / Lệnh thực hành:** [Xem chi tiết bài viết](/posts/2026/11/ros2-tutorial-15/) *(Đang cập nhật)*
+1. [Tutorial 1: Cài đặt và thiết lập môi trường ROS 2 Jazzy](/posts/2026/11/ros2-tutorial-1/)
+2. [Tutorial 2: Chạy thử Node ROS 2 đầu tiên (Sử dụng các node có sẵn để test)](/posts/2026/11/ros2-tutorial-2/)
+3. [Tutorial 3: Tạo và cấu hình ROS 2 Workspace với colcon](/posts/2026/11/ros2-tutorial-3/)
+4. [Tutorial 4: Tạo một ROS 2 Package bằng Python / C++](/posts/2026/11/ros2-tutorial-4/)
+5. [Tutorial 5: Viết ROS 2 Node cơ bản bằng Python theo hướng đối tượng (OOP)](/posts/2026/11/ros2-tutorial-5/)
+6. [Tutorial 6: Khám phá ROS 2 Topic qua Terminal](/posts/2026/11/ros2-tutorial-6/)
+7. [Tutorial 7: Lập trình ROS 2 Publisher](/posts/2026/11/ros2-tutorial-7/)
+8. [Tutorial 8: Lập trình ROS 2 Subscriber](/posts/2026/11/ros2-tutorial-8/)
+9. [Tutorial 9: Tạo hệ thống vòng kín (Closed-loop) giao tiếp giữa Publisher và Subscriber](/posts/2026/11/ros2-tutorial-9/)
+10. [Tutorial 10: Khái niệm và cách kiểm tra ROS 2 Service qua Terminal](/posts/2026/11/ros2-tutorial-10/)
+11. [Tutorial 11: Lập trình ROS 2 Service Server & Client bằng Python](/posts/2026/11/ros2-tutorial-11/)
+12. [Tutorial 12: Tạo cấu trúc dữ liệu tùy chỉnh (Custom Message & Service - msg, srv)](/posts/2026/11/ros2-tutorial-12/)
+13. [Tutorial 13: Khai báo và sử dụng Parameters trong Node](/posts/2026/11/ros2-tutorial-13/)
+14. [Tutorial 14: Gom cụm hệ thống với Launch File (Khởi chạy nhiều node cùng lúc)](/posts/2026/11/ros2-tutorial-14/)
+15. [(Tùy chọn bổ sung) Tutorial 15: Giới thiệu và lập trình cơ bản ROS 2 Action](/posts/2026/11/ros2-tutorial-15/)
