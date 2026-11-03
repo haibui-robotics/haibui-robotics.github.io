@@ -5,7 +5,7 @@ permalink: /posts/2026/11/ros2-tutorial-7/
 author_profile: true
 ---
 
-[⬅ Quay lại chuỗi bài: ROS 2 for Beginners](/posts/2026/11/ros2-for-beginners/)
+[⬅ Quay lại chuỗi bài: ROS 2 for Beginners](/posts/2026/11/ros2-for-beginners/) | [Bài tiếp theo: Tutorial 8 - Lập trình ROS 2 Subscriber ➡](/posts/2026/11/ros2-tutorial-8/)
 
 ---
 
@@ -111,4 +111,4 @@ if __name__ == '__main__':
 
 ---
 
-[⬅ Quay lại chuỗi bài: ROS 2 for Beginners](/posts/2026/11/ros2-for-beginners/)
+[⬅ Quay lại chuỗi bài: ROS 2 for Beginners](/posts/2026/11/ros2-for-beginners/) | [Bài tiếp theo: Tutorial 8 - Lập trình ROS 2 Subscriber ➡](/posts/2026/11/ros2-tutorial-8/)
