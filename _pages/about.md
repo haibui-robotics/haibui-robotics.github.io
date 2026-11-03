@@ -1,4 +1,5 @@
 ---
+layout: single
 permalink: /
 title: "Giới thiệu"
 excerpt: "About me"
