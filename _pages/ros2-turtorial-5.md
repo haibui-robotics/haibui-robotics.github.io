@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Tutorial 7: Lập trình ROS 2 Publisher"
-permalink: /posts/2026/11/ros2-tutorial-7/
+title: "Tutorial 5: Viết ROS 2 Node cơ bản bằng Python theo hướng đối tượng (OOP)"
+permalink: /posts/2026/11/ros2-tutorial-5/
 author_profile: true
 ---
 

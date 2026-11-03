@@ -3,8 +3,6 @@ layout: single
 title: "Tutorial 8: Lập trình ROS 2 Subscriber"
 permalink: /posts/2026/11/ros2-tutorial-8/
 author_profile: true
-redirect_from:
-  - /posts/2026/11/ros2-tutorial-6/
 ---
 
 [⬅ Quay lại chuỗi bài: ROS 2 for Beginners](/posts/2026/11/ros2-for-beginners/) | [⬅ Bài trước: Tutorial 7 - Lập trình ROS 2 Publisher](/posts/2026/11/ros2-tutorial-7/)
