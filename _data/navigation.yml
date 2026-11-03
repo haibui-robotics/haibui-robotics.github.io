@@ -8,23 +8,23 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
-  - title: "Publications"
+  - title: "Bài báo"
     url: /publications/
 
-  - title: "Talks"
-    url: /talks/    
+  # - title: "Talks"
+  #   url: /talks/    
 
-  - title: "Teaching"
-    url: /teaching/    
+  # - title: "Teaching"
+  #   url: /teaching/    
     
-  - title: "Portfolio"
+  - title: "Dự án"
     url: /portfolio/
         
-  - title: "Blog Posts"
+  - title: "Bài viết"
     url: /year-archive/
     
   - title: "CV"
     url: /cv/
     
-  - title: "Guide"
-    url: /markdown/
+  # - title: "Guide"
+  #   url: /markdown/
