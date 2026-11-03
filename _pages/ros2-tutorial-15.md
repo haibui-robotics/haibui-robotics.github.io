@@ -52,12 +52,10 @@ Khi thiết kế robot, bạn sẽ gặp 2 loại TF phát trên hệ thống:
 
 ## 4. Thực hành: Trực quan hóa TF Tree trên Robot thực tế
 
-*(Để hiểu rõ nhất cách TF Tree hoạt động, hãy xem video minh họa dưới đây)*
-
 Trong video này, tôi sẽ sử dụng một mô hình xe robot đã được tạo sẵn:
 
 📺 **Video hướng dẫn & minh họa trực quan trên YouTube:**  
-👉 [Xem video trên kênh YouTube Hải Bùi](https://www.youtube.com/@HaiBui-tl7gq)
+👉 [Xem video trên kênh YouTube Hải Bùi](https://youtu.be/2FniZUf9R8s)
 
 ---
 
