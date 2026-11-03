@@ -5,7 +5,7 @@ permalink: /posts/2026/11/ros2-tutorial-16/
 author_profile: true
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 15 - Khái niệm TF2 & TF Tree](/posts/2026/11/ros2-tutorial-15/) | [Bài tiếp: Tutorial 18 - Hiển thị robot trên RViz2 ➡](/posts/2026/11/ros2-tutorial-18/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 15 - Khái niệm TF2 & TF Tree](/posts/2026/11/ros2-tutorial-15/) | [Bài tiếp: Tutorial 17 - Viết code thông minh hơn với Xacro ➡](/posts/2026/11/ros2-tutorial-17/)
 
 ---
 
@@ -122,4 +122,4 @@ Chúng ta sẽ viết mã cho một robot gồm 1 thân xe dạng hộp chữ nh
 
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 15 - Khái niệm TF2 & TF Tree](/posts/2026/11/ros2-tutorial-15/) | [Bài tiếp: Tutorial 18 - Hiển thị robot trên RViz2 ➡](/posts/2026/11/ros2-tutorial-18/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 15 - Khái niệm TF2 & TF Tree](/posts/2026/11/ros2-tutorial-15/) | [Bài tiếp: Tutorial 17 - Viết code thông minh hơn với Xacro ➡](/posts/2026/11/ros2-tutorial-17/)
