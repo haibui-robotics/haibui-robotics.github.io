@@ -5,7 +5,7 @@ permalink: /posts/2026/11/ros2-tutorial-20/
 author_profile: true
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 19 - Chuẩn bị cho Gazebo (Inertia & Collision)](/posts/2026/11/ros2-tutorial-19/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 19 - Chuẩn bị cho Gazebo (Inertia & Collision)](/posts/2026/11/ros2-tutorial-19/) | [Bài tiếp: Tutorial 21 - Làm cho robot di chuyển trong Gazebo ➡](/posts/2026/11/ros2-tutorial-21/)
 
 ---
 
@@ -109,4 +109,4 @@ Khi bạn chạy lệnh `ros2 launch my_mobilerobot gazebo.launch.xml`, những 
 
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 19 - Chuẩn bị cho Gazebo (Inertia & Collision)](/posts/2026/11/ros2-tutorial-19/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 19 - Chuẩn bị cho Gazebo (Inertia & Collision)](/posts/2026/11/ros2-tutorial-19/) | [Bài tiếp: Tutorial 21 - Làm cho robot di chuyển trong Gazebo ➡](/posts/2026/11/ros2-tutorial-21/)
