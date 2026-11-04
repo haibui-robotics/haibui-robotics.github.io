@@ -5,7 +5,7 @@ permalink: /posts/2026/11/ros2-tutorial-21/
 author_profile: true
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 20 - Cài đặt Gazebo Sim & Spawn robot](/posts/2026/11/ros2-tutorial-20/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 20 - Cài đặt Gazebo Sim & Spawn robot](/posts/2026/11/ros2-tutorial-20/) | [Bài tiếp: Tutorial 22 - Gắn cảm biến LiDAR 2D vào Gazebo ➡](/posts/2026/11/ros2-tutorial-22/)
 
 ---
 
@@ -171,4 +171,4 @@ và nhấn các phím mũi tên để xem con robot của bạn chính thức l�
 
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 20 - Cài đặt Gazebo Sim & Spawn robot](/posts/2026/11/ros2-tutorial-20/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 20 - Cài đặt Gazebo Sim & Spawn robot](/posts/2026/11/ros2-tutorial-20/) | [Bài tiếp: Tutorial 22 - Gắn cảm biến LiDAR 2D vào Gazebo ➡](/posts/2026/11/ros2-tutorial-22/)
