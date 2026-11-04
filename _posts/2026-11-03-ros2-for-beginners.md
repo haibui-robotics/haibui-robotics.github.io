@@ -90,4 +90,3 @@ ROS 2 sử dụng tiêu chuẩn **DDS (Data Distribution Service)** giúp các t
 12. [Tutorial 12: Tạo cấu trúc dữ liệu tùy chỉnh (Custom Message & Service - msg, srv)](/posts/2026/11/ros2-tutorial-12/)
 13. [Tutorial 13: Khai báo và sử dụng Parameters trong Node](/posts/2026/11/ros2-tutorial-13/)
 14. [Tutorial 14: Gom cụm hệ thống với Launch File (Khởi chạy nhiều node cùng lúc)](/posts/2026/11/ros2-tutorial-14/)
-15. [(Tùy chọn bổ sung) Tutorial 15: Giới thiệu và lập trình cơ bản ROS 2 Action](/posts/2026/11/ros2-tutorial-15/)

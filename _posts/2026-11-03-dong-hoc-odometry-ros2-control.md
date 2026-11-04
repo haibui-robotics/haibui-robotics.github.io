@@ -48,12 +48,11 @@ Hiểu cách biến các lệnh điều khiển (như tiến, lùi, xoay) thành
 
 *(Nhấn vào từng bài để xem hướng dẫn chi tiết, source code và video YouTube)*
 
-1. [Tutorial 24: Giới thiệu tiêu chuẩn điều khiển: Topic /cmd_vel, gói tin Twist và cách dùng teleop_twist_keyboard để lái robot bằng bàn phím](/posts/2026/11/ros2-tutorial-24/)
-2. [Tutorial 25: Động học xe 2 bánh (Differential Drive): Bản chất toán học đằng sau chuyển động](/posts/2026/11/ros2-tutorial-25/)
-3. [Tutorial 26: Giới thiệu ros2_control và cách tích hợp diff_drive_controller vào robot mô phỏng Gazebo](/posts/2026/11/ros2-tutorial-26/)
-4. [Tutorial 27: Xuất dữ liệu Odometry từ bánh xe và hiển thị quỹ đạo di chuyển (Trajectory) của robot trên màn hình RViz2](/posts/2026/11/ros2-tutorial-27/)
-5. [Tutorial 28: Khái niệm "Drift" (Trượt): Trực tiếp quan sát sai số của Odometry trên RViz2 khi robot xoay tròn nhiều vòng](/posts/2026/11/ros2-tutorial-28/)
-6. [Tutorial 29: Giới thiệu cảm biến IMU: Khai báo plugin IMU trong Gazebo và đọc dữ liệu gia tốc, góc xoay](/posts/2026/11/ros2-tutorial-29/)
-7. [Tutorial 30: Kết hợp cảm biến (Sensor Fusion): Cài đặt và cấu hình node ekf_node từ gói robot_localization](/posts/2026/11/ros2-tutorial-30/)
-8. [Tutorial 31: Dung hợp Encoder và IMU: Cấu hình ma trận EKF để tạo ra Topic /odometry/filtered chính xác tuyệt đối](/posts/2026/11/ros2-tutorial-31/)
-9. [(Tùy chọn nâng cao nếu bạn dùng Omni) Tutorial 32: Cấu hình động học và điều khiển cho robot 3 bánh đa hướng (Kiwi Drive / Omni Drive)](/posts/2026/11/ros2-tutorial-32/)
+1. [Tutorial 28: Giới thiệu tiêu chuẩn điều khiển: Topic /cmd_vel, gói tin Twist và cách dùng teleop_twist_keyboard để lái robot bằng bàn phím](/posts/2026/11/ros2-tutorial-28/)
+2. [Tutorial 29: Động học xe 2 bánh (Differential Drive): Bản chất toán học đằng sau chuyển động](/posts/2026/11/ros2-tutorial-29/)
+3. [Tutorial 30: Giới thiệu ros2_control và cách tích hợp diff_drive_controller vào robot mô phỏng Gazebo](/posts/2026/11/ros2-tutorial-30/)
+4. [Tutorial 31: Xuất dữ liệu Odometry từ bánh xe và hiển thị quỹ đạo di chuyển (Trajectory) của robot trên màn hình RViz2](/posts/2026/11/ros2-tutorial-31/)
+5. [Tutorial 32: Khái niệm "Drift" (Trượt): Trực tiếp quan sát sai số của Odometry trên RViz2 khi robot xoay tròn nhiều vòng](/posts/2026/11/ros2-tutorial-32/)
+6. [Tutorial 33: Kết hợp cảm biến (Sensor Fusion): Cài đặt và cấu hình node ekf_node từ gói robot_localization](/posts/2026/11/ros2-tutorial-33/)
+7. [Tutorial 34: Dung hợp Encoder và IMU: Cấu hình ma trận EKF để tạo ra Topic /odometry/filtered chính xác tuyệt đối](/posts/2026/11/ros2-tutorial-34/)
+8. [(Tùy chọn nâng cao nếu bạn dùng Omni) Tutorial 35: Cấu hình động học và điều khiển cho robot 3 bánh đa hướng (Kiwi Drive / Omni Drive)](/posts/2026/11/ros2-tutorial-35/)

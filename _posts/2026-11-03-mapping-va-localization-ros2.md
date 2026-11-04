@@ -48,12 +48,12 @@ Học cách robot tự động khám phá và vẽ lại bản đồ của một
 
 *(Nhấn vào từng bài để xem hướng dẫn chi tiết, source code và video YouTube)*
 
-1. [Tutorial 33: Bản đồ trong ROS 2 là gì? Phân tích cấu trúc file .yaml và .pgm](/posts/2026/11/ros2-tutorial-33/)
-2. [Tutorial 34: Giới thiệu gói slam_toolbox: Cài đặt và cấu hình các thông số cơ bản cho việc vẽ map 2D](/posts/2026/11/ros2-tutorial-34/)
-3. [Tutorial 35: Chạy SLAM trong Gazebo: Lái robot đi vòng quanh để tạo bản đồ và hiển thị quá trình vẽ trực tiếp trên RViz2](/posts/2026/11/ros2-tutorial-35/)
-4. [Tutorial 36: Lưu bản đồ vĩnh viễn (Map Saver) bằng thư viện nav2_map_server](/posts/2026/11/ros2-tutorial-36/)
-5. [Tutorial 37: Giới thiệu Lifecycle Node: Dùng map_server để tải (load) bản đồ đã lưu lên Topic /map](/posts/2026/11/ros2-tutorial-37/)
-6. [Tutorial 38: Giới thiệu thuật toán Lọc Hạt (Particle Filter) và bản chất của AMCL](/posts/2026/11/ros2-tutorial-38/)
-7. [Tutorial 39: Cấu hình và chạy node amcl để định vị robot](/posts/2026/11/ros2-tutorial-39/)
-8. [Tutorial 40: Trực quan hóa đám mây hạt (Particle Cloud) trên RViz2: Cung cấp 2D Pose Estimate (vị trí khởi tạo ban đầu) và xem các hạt hội tụ khi robot di chuyển](/posts/2026/11/ros2-tutorial-40/)
-9. [Tutorial 41: Kiểm chứng sự hiệu chỉnh TF: Quan sát cách AMCL tạo ra TF map -> odom để sửa lỗi trượt (drift) của bánh xe](/posts/2026/11/ros2-tutorial-41/)
+1. [Tutorial 36: Bản đồ trong ROS 2 là gì? Phân tích cấu trúc file .yaml và .pgm](/posts/2026/11/ros2-tutorial-36/)
+2. [Tutorial 37: Giới thiệu gói slam_toolbox: Cài đặt và cấu hình các thông số cơ bản cho việc vẽ map 2D](/posts/2026/11/ros2-tutorial-37/)
+3. [Tutorial 38: Chạy SLAM trong Gazebo: Lái robot đi vòng quanh để tạo bản đồ và hiển thị quá trình vẽ trực tiếp trên RViz2](/posts/2026/11/ros2-tutorial-38/)
+4. [Tutorial 39: Lưu bản đồ vĩnh viễn (Map Saver) bằng thư viện nav2_map_server](/posts/2026/11/ros2-tutorial-39/)
+5. [Tutorial 40: Giới thiệu Lifecycle Node: Dùng map_server để tải (load) bản đồ đã lưu lên Topic /map](/posts/2026/11/ros2-tutorial-40/)
+6. [Tutorial 41: Giới thiệu thuật toán Lọc Hạt (Particle Filter) và bản chất của AMCL](/posts/2026/11/ros2-tutorial-41/)
+7. [Tutorial 42: Cấu hình và chạy node amcl để định vị robot](/posts/2026/11/ros2-tutorial-42/)
+8. [Tutorial 43: Trực quan hóa đám mây hạt (Particle Cloud) trên RViz2: Cung cấp 2D Pose Estimate (vị trí khởi tạo ban đầu) và xem các hạt hội tụ khi robot di chuyển](/posts/2026/11/ros2-tutorial-43/)
+9. [Tutorial 44: Kiểm chứng sự hiệu chỉnh TF: Quan sát cách AMCL tạo ra TF map -> odom để sửa lỗi trượt (drift) của bánh xe](/posts/2026/11/ros2-tutorial-44/)
