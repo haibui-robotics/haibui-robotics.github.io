@@ -5,7 +5,7 @@ permalink: /posts/2026/11/ros2-tutorial-25/
 author_profile: true
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 23 - Gắn cảm biến Camera 2D & Optical Frame](/posts/2026/11/ros2-tutorial-23/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 24 - Gắn cảm biến Depth Camera (RGB-D)](/posts/2026/11/ros2-tutorial-24/)
 
 ---
 
@@ -170,4 +170,4 @@ Gazebo phát dữ liệu IMU lên topic nội bộ `imu` với kiểu `gz.msg.IM
 
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 23 - Gắn cảm biến Camera 2D & Optical Frame](/posts/2026/11/ros2-tutorial-23/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 24 - Gắn cảm biến Depth Camera (RGB-D)](/posts/2026/11/ros2-tutorial-24/)

@@ -5,7 +5,7 @@ permalink: /posts/2026/11/ros2-tutorial-23/
 author_profile: true
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 22 - Gắn cảm biến LiDAR 2D vào Gazebo](/posts/2026/11/ros2-tutorial-22/) | [Bài tiếp: Tutorial 25 - Gắn cảm biến IMU vào Gazebo ➡](/posts/2026/11/ros2-tutorial-25/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 22 - Gắn cảm biến LiDAR 2D vào Gazebo](/posts/2026/11/ros2-tutorial-22/) | [Bài tiếp: Tutorial 24 - Gắn cảm biến Depth Camera (RGB-D) ➡](/posts/2026/11/ros2-tutorial-24/)
 
 ---
 
@@ -153,4 +153,4 @@ Hình ảnh là dạng dữ liệu rất nặng. Gazebo phát ảnh ra topic tê
 
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 22 - Gắn cảm biến LiDAR 2D vào Gazebo](/posts/2026/11/ros2-tutorial-22/) | [Bài tiếp: Tutorial 25 - Gắn cảm biến IMU vào Gazebo ➡](/posts/2026/11/ros2-tutorial-25/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 22 - Gắn cảm biến LiDAR 2D vào Gazebo](/posts/2026/11/ros2-tutorial-22/) | [Bài tiếp: Tutorial 24 - Gắn cảm biến Depth Camera (RGB-D) ➡](/posts/2026/11/ros2-tutorial-24/)
