@@ -5,7 +5,7 @@ permalink: /posts/2026/11/ros2-tutorial-22/
 author_profile: true
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 21 - Làm cho robot di chuyển trong Gazebo](/posts/2026/11/ros2-tutorial-21/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 21 - Làm cho robot di chuyển trong Gazebo](/posts/2026/11/ros2-tutorial-21/) | [Bài tiếp: Tutorial 23 - Gắn cảm biến Camera 2D & Optical Frame ➡](/posts/2026/11/ros2-tutorial-23/)
 
 ---
 
@@ -173,4 +173,4 @@ Bây giờ, hãy mở Terminal điều khiển phím (`teleop`), lái xe đi vò
 
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 21 - Làm cho robot di chuyển trong Gazebo](/posts/2026/11/ros2-tutorial-21/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 21 - Làm cho robot di chuyển trong Gazebo](/posts/2026/11/ros2-tutorial-21/) | [Bài tiếp: Tutorial 23 - Gắn cảm biến Camera 2D & Optical Frame ➡](/posts/2026/11/ros2-tutorial-23/)
