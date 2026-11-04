@@ -5,7 +5,7 @@ permalink: /posts/2026/11/ros2-tutorial-19/
 author_profile: true
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 18 - Hiển thị robot trên RViz2](/posts/2026/11/ros2-tutorial-18/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 18 - Hiển thị robot trên RViz2](/posts/2026/11/ros2-tutorial-18/) | [Bài tiếp: Tutorial 20 - Cài đặt Gazebo Sim & Spawn robot ➡](/posts/2026/11/ros2-tutorial-20/)
 
 ---
 
@@ -99,4 +99,4 @@ Bạn sẽ lặp lại quá trình này: Thêm thẻ `<collision>` và gọi Mac
 
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 18 - Hiển thị robot trên RViz2](/posts/2026/11/ros2-tutorial-18/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 18 - Hiển thị robot trên RViz2](/posts/2026/11/ros2-tutorial-18/) | [Bài tiếp: Tutorial 20 - Cài đặt Gazebo Sim & Spawn robot ➡](/posts/2026/11/ros2-tutorial-20/)
