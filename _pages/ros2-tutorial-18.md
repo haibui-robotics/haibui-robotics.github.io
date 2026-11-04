@@ -5,7 +5,7 @@ permalink: /posts/2026/11/ros2-tutorial-18/
 author_profile: true
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 17 - Viết code thông minh hơn với Xacro](/posts/2026/11/ros2-tutorial-17/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 17 - Viết code thông minh hơn với Xacro](/posts/2026/11/ros2-tutorial-17/) | [Bài tiếp: Tutorial 19 - Chuẩn bị cho Gazebo (Inertia & Collision) ➡](/posts/2026/11/ros2-tutorial-19/)
 
 ---
 
@@ -85,4 +85,4 @@ Lúc này, phần mềm **RViz2** sẽ hiện lên với mô hình 3D của robo
 
 ---
 
-[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 17 - Viết code thông minh hơn với Xacro](/posts/2026/11/ros2-tutorial-17/)
+[⬅ Quay lại bài: Mô phỏng Robot với ROS 2](/posts/2026/11/mo-phong-robot-ros2/) | [⬅ Bài trước: Tutorial 17 - Viết code thông minh hơn với Xacro](/posts/2026/11/ros2-tutorial-17/) | [Bài tiếp: Tutorial 19 - Chuẩn bị cho Gazebo (Inertia & Collision) ➡](/posts/2026/11/ros2-tutorial-19/)
