@@ -74,7 +74,7 @@ File này chứa cấu hình vật lý và các **System Plugins** điều khi�
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <!-- 1. Plugin Điều khiển xe 2 bánh vi sai (Differential Drive) -->
+    <!-- 1. Plugin Điều khiển xe 2 bánh vi sai (Differential Drive)-->
     <gazebo>
         <plugin filename="gz-sim-diff-drive-system"
                 name="gz::sim::systems::DiffDrive">
@@ -92,7 +92,7 @@ File này chứa cấu hình vật lý và các **System Plugins** điều khi�
         </plugin>
     </gazebo>
 
-    <!-- 2. Plugin phát góc quay thực tế của 2 bánh xe lên /joint_states -->
+    <!-- 2. Plugin phát góc quay thực tế của 2 bánh xe lên /joint_states-->
     <gazebo>
         <plugin filename="gz-sim-joint-state-publisher-system"
                 name="gz::sim::systems::JointStatePublisher">
@@ -115,7 +115,8 @@ File này chứa cấu hình vật lý và các **System Plugins** điều khi�
 
 </robot>
 ```
-
+* **Plugin diff-drive:** [https://github.com/gazebosim/gz-sim/blob/main/src/systems/diff_drive/DiffDrive.hh](https://github.com/gazebosim/gz-sim/blob/main/src/systems/diff_drive/DiffDrive.hh)
+* **Plugin joint-state-publisher:** [https://github.com/gazebosim/gz-sim/blob/main/src/systems/joint_state_publisher/JointStatePublisher.hh](https://github.com/gazebosim/gz-sim/blob/main/src/systems/joint_state_publisher/JointStatePublisher.hh)  
 ---
 
 ## 4. Bước 3: Cấu hình Cầu nối `config/gazebo_bridge.yaml` và `gazebo.launch.xml`
