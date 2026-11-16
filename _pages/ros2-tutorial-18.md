@@ -43,7 +43,8 @@ Tạo một file `launch/display.launch.xml` để chạy cả `robot_state_publ
 ```xml
 <launch>
     <!-- 1. Tạo các biến đường dẫn tạm thời -->
-    <!-- Hàm find-pkg-share giúp tự động tìm đúng đường dẫn tới thư mục cài đặt của package -->
+    <!-- Hàm find-pkg-share giúp tự động tìm đúng đường dẫn tới thư mục cài đặt của package
+        Chú ỳ không dùng find + tên thư mục => cấu trúc của ROS1 (báo lỗi)-->
     <let name="urdf_path" value="$(find-pkg-share my_robot_description)/urdf/my_robot.urdf" />
     <let name="rviz_config_path" value="$(find-pkg-share my_robot_description)/rviz/urdf_config.rviz"/>
 
