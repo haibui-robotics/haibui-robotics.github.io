@@ -189,11 +189,11 @@ Khai báo bảng ánh xạ giữa các Topic của ROS 2 và Gazebo Sim (lưu ý
   direction: GZ_TO_ROS
 ```
 * **Chạy:**
-```xml
+```bash
 ros2 topic list
-ros2 topic info + tên topic (Ví dụ: ros2 topic info /clock)
+ros2 topic info /clock    <!-- ros2 topic info + tên topic -->
 gz topic -l
-gz topic --info --topic +tên topic (Ví dụ:  gz topic --info --topic /clock)
+gz topic --info --topic /clock    <!--gz topic --info --topic +tên topic--> 
 
 ```
 
