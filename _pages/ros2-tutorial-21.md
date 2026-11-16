@@ -189,11 +189,13 @@ Khai báo bảng ánh xạ giữa các Topic của ROS 2 và Gazebo Sim (lưu ý
   direction: GZ_TO_ROS
 ```
 * **Chạy:**
+```xml
 ros2 topic list
 ros2 topic info + tên topic (Ví dụ: ros2 topic info /clock)
 gz topic -l
 gz topic --info --topic +tên topic (Ví dụ:  gz topic --info --topic /clock)
 
+```
 
 ### B. Mở khóa `ros_gz_bridge` trong `launch/gazebo.launch.xml`
 Trong file `launch/gazebo.launch.xml` (đã tạo ở Tutorial 20), ta bỏ chú thích cho biến `gazebo_config_path` và node `parameter_bridge`:
