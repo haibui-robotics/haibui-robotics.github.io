@@ -9,11 +9,20 @@ author_profile: true
 
 ---
 
-## 1. Lý thuyết cốt lõi: `ros2_control` là gì và tại sao phải dùng?
+## 1. Lý thuyết cốt lõi: Hai cách để làm xe di chuyển trên Gazebo
 
-Ở giai đoạn Mô phỏng ([Tutorial 21](/posts/2026/11/ros2-tutorial-21/)), chúng ta đã dùng plugin `gz-sim-diff-drive-system` của riêng Gazebo để làm xe di chuyển. Tuy nhiên, cách đó có một nhược điểm lớn: **Plugin của Gazebo chỉ sống được trong thế giới ảo**. Khi bạn lắp ráp xong chiếc xe thật (dùng vi điều khiển ESP32/STM32 băm xung PWM cho động cơ DC và đọc xung Encoder), plugin của Gazebo hoàn toàn vô dụng và bạn phải viết lại hệ thống điều khiển từ đầu.
+Khi lập trình robot di động trong ROS 2 và Gazebo Sim, bạn cần nắm thật rõ rằng có **2 cách tiếp cận hoàn toàn khác nhau** để điều khiển bánh xe lăn bánh:
 
-**`ros2_control`** ra đời như một chuẩn công nghiệp trong ROS 2 để **tách biệt hoàn toàn Phần mềm điều khiển (Controllers) khỏi Phần cứng (Hardware)**:
+| Tiêu chí so sánh | Cách 1: Gazebo Plugin + `ros_gz_bridge`<br>*(Đã học ở [Tutorial 21](/posts/2026/11/ros2-tutorial-21/))* | Cách 2: Hệ thống `ros2_control`<br>*(Nội dung bài học này)* |
+| :--- | :--- | :--- |
+| **Cơ chế hoạt động** | Gazebo tự tính động học bằng plugin `gz-sim-diff-drive-system` và `gz-sim-joint-state-publisher-system`, sau đó đẩy `/odom`, `/tf`, `/joint_states` qua cầu nối `ros_gz_bridge` sang ROS 2. | ROS 2 nắm quyền điều khiển trực tiếp từng khớp bánh xe thông qua `controller_manager` và plugin cầu nối phần cứng `gz_ros2_control`. |
+| **Phạm vi sử dụng** | **Chỉ chạy được trên Mô phỏng Gazebo.** Không thể mang xuống chạy trên mạch điều khiển thực tế. | **Vừa chạy được trên Mô phỏng Gazebo (`use_gazebo:=true`), vừa chạy được trên Phần cứng thật (`use_gazebo:=false` – ESP32/STM32).** |
+| **Cấu hình `gazebo_bridge.yaml`** | Phải bridge cả `/cmd_vel`, `/odom`, `/tf`, `/joint_states` và `/clock`. | **Không cần** bridge `/cmd_vel`, `/odom`, `/tf`, `/joint_states` nữa (vì `ros2_control` đã xử lý trực tiếp bên trong ROS 2). Chỉ giữ lại `/clock` và các cảm biến (`/scan`, `/camera`, `/imu`). |
+| **Khi nào nên dùng?** | Khi mới làm quen với Gazebo hoặc muốn test nhanh cảm biến, SLAM, Nav2 thuần mô phỏng. | Khi xây dựng **dự án Robot thực tế hoàn chỉnh** cần đồng nhất 100% thuật toán giữa Mô phỏng (Sim) và Đời thực (Real). |
+
+> ⚠️ **Nguyên tắc quan trọng:** Trong một thời điểm, bạn **chỉ sử dụng 1 trong 2 cách**. Khi chuyển sang dùng **`ros2_control` (Cách 2)**, bạn phải đóng chú thích (hoặc xóa) 2 plugin `DiffDrive` và `JointStatePublisher` của Cách 1 đi để tránh 2 bộ điều khiển cùng tranh giành bánh xe!
+
+### Sơ đồ kiến trúc của Cách 2 (`ros2_control` – Chạy cả Mô phỏng lẫn Phần cứng thật):
 
 ```text
            [ Thuật toán Điều hướng (Nav2) / Teleop (/cmd_vel) ]

@@ -19,6 +19,11 @@ Trong bài này *(tương ứng với commit **`V2-bridge+plugin`** trong dự �
 2. **Gắn Gazebo System Plugins (`gazebo_sim_controll.xacro`):** Tích hợp bộ truyền động vi sai `DiffDrive`, bộ đọc góc khớp bánh xe `JointStatePublisher` và giảm ma sát cho 2 bánh tự lựa (*caster wheels*).
 3. **Thiết lập Cầu nối `ros_gz_bridge` (`gazebo_bridge.yaml` & `gazebo.launch.xml`):** Chuyển đổi 5 kênh dữ liệu cốt lõi (`/clock`, `/cmd_vel`, `/odom`, `/tf`, `/joint_states`) giữa Gazebo Sim và ROS 2.
 
+> 💡 **Ghi nhớ quan trọng – 2 Cách điều khiển xe trên Gazebo:**  
+> Để làm robot di chuyển trong Gazebo, chúng ta có **2 cách tiếp cận**:
+> * **Cách 1 (Bài học này): Dùng Gazebo Plugin (`DiffDrive`) + `ros_gz_bridge`** — Gọn nhẹ, dễ hiểu, giúp xe chạy ngay trên môi trường ảo nhưng **chỉ dùng được trong mô phỏng**.
+> * **Cách 2 ([Tutorial 30](/posts/2026/11/ros2-tutorial-30/)): Dùng hệ thống `ros2_control`** — Chuẩn công nghiệp giúp bạn dùng chung 1 bộ code điều khiển cho **cả Mô phỏng Gazebo lẫn Phần cứng Robot thật (ESP32/STM32)**.
+
 ---
 
 ## 2. Bước 1: Chuẩn hóa khớp bánh xe trong `urdf/amr.urdf.xacro`
