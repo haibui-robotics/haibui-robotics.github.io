@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Tutorial 22: Gắn cảm biến LiDAR 2D vào Gazebo và hiển thị trên RViz2"
+title: "Tutorial 22: Gắn cảm biến LiDAR 2D vào Gazebo và hiển thị trên RViz2 (Dự án amr_ws – Commit V3)"
 permalink: /posts/2026/11/ros2-tutorial-22/
 author_profile: true
 ---
@@ -11,165 +11,135 @@ author_profile: true
 
 ## 1. Mục tiêu và Khái niệm
 
-**LiDAR 2D** là một trong những cảm biến quan trọng nhất để robot định vị và tránh vật cản. Nó phát ra các tia laser xung quanh mặt phẳng ngang và đo thời gian tia sáng phản xạ lại để tính toán khoảng cách.
+**LiDAR 2D** là cảm biến quan trọng bậc nhất giúp robot tự hành (AMR) quét bản đồ môi trường (**SLAM**) và phát hiện vật cản (**Navigation**). Nó phát ra các tia laser xoay $360^\circ$ quanh mặt phẳng ngang và đo thời gian phản xạ để tính khoảng cách tới các bức tường.
 
-Trong bài này, chúng ta sẽ thực hiện 3 việc:
+Trong dự án **[`amr_ws`](/portfolio/amr-ws/)** *(commit **`V3-lidar+cam+imu`**)*, phần khung hình học 3D của LiDAR (`lidar_link` với file lưới `lidar_link.STL` và khớp cố định `lidar_joint`) đã được xuất sẵn từ SolidWorks nằm trong file `urdf/amr.urdf.xacro`. Do đó, ở bài này chúng ta chỉ cần:
 
-1. **Thiết kế LiDAR (URDF):** Tạo khối trụ đại diện cho LiDAR và gắn lên đỉnh xe.
-2. **Mô phỏng tia quét (Gazebo Plugin):** Gắn module giả lập cảm biến `gpu_lidar` vào Gazebo để sinh ra dữ liệu đo đạc (điểm ảnh).
-3. **Trực quan hóa vùng quét (Tùy chọn):** Vẽ một vòng tròn đỏ bán trong suốt quanh xe để dễ quan sát phạm vi hoạt động 5m của LiDAR trên mô phỏng.
+1. **Viết file `urdf/lidar.xacro`:** Gắn trực tiếp cảm biến `<sensor name="gpu_lidar" type="gpu_lidar">` vào `lidar_link` và nhúng vào `amr.urdf.xacro`.
+2. **Cập nhật `config/gazebo_bridge.yaml`:** Mở cầu nối chuyển dữ liệu quét `/scan` từ Gazebo Sim sang ROS 2.
+3. **Hiển thị tia quét `LaserScan` trên RViz2.**
 
 ---
 
-## 2. Viết file `lidar.xacro`
+## 2. Nguồn tra cứu Code mẫu `<sensor>` chuẩn của Gazebo (SDFormat)
 
-Tạo một file mới tên là `lidar.xacro` và định nghĩa cấu trúc của cảm biến:
+Khi cần tra cứu cú pháp XML chuẩn của mọi loại cảm biến trong Gazebo (`gpu_lidar`, `camera`, `imu`, `rgbd_camera`...), bạn có thể lấy trực tiếp từ kho mã nguồn **SDFormat** chính thức của Open Robotics:
+
+* 🔗 **Kho mã nguồn SDFormat:** [https://github.com/gazebosim/sdformat/tree/main](https://github.com/gazebosim/sdformat/tree/main)
+* 🔗 **File mẫu tổng hợp tất cả các loại `<sensor>` (`sensors.sdf`):** [https://github.com/gazebosim/sdformat/blob/main/test/sdf/sensors.sdf](https://github.com/gazebosim/sdformat/blob/main/test/sdf/sensors.sdf)
+
+---
+
+## 3. Viết file `urdf/lidar.xacro` (Commit V3)
+
+Trong `amr.urdf.xacro`, `lidar_link` và `lidar_joint` đã có sẵn từ bản vẽ CAD:
+
+```xml
+  <!-- Đã có sẵn trong urdf/amr.urdf.xacro -->
+  <link name="lidar_link">
+    ...
+    <visual>
+      <geometry>
+        <mesh filename="package://amr_description/meshes/lidar_link.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://amr_description/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="lidar_joint" type="fixed">
+    <origin xyz="0.0077825 3.5032E-05 0.1756" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="lidar_link" />
+  </joint>
+```
+
+Bây giờ, ta tạo file `urdf/lidar.xacro` để gắn cảm biến `gpu_lidar` vào `lidar_link`:
 
 ```xml
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <!-- 1. Định nghĩa khối trụ đại diện cho cảm biến Lidar -->
-    <xacro:property name="lidar_radius" value="0.04" />
-    <xacro:property name="lidar_length" value="0.03" />
-
-    <link name="lidar_link">
-        <visual>
-            <geometry>
-                 <cylinder radius="${lidar_radius}" length="${lidar_length}"/>
-            </geometry>
-            <material name="grey" />
-        </visual>
-        <collision>
-            <geometry>
-                <cylinder radius="${lidar_radius}" length="${lidar_length}" />
-            </geometry>
-        </collision>
-        <!-- Khối lượng rất nhẹ cho Lidar -->
-        <xacro:cylinder_inertia m="0.1" r="${lidar_radius}" h="${lidar_length}"
-                           o_xyz="0 0 0" o_rpy="0 0 0" />
-    </link>
-
-    <!-- Khớp nối cố định Lidar vào giữa thân xe (base_link), nhô cao 0.2m -->
-    <joint name="base_lidar_joint" type="fixed">
-        <parent link="base_link" />
-        <child link="lidar_link" />
-        <origin xyz="0 0 0.2" rpy="0 0 0" />
-    </joint>
-
-    <!-- 2. (Trang trí) Vòng tròn đỏ bán trong suốt hiển thị vùng quét 5m -->
-    <xacro:property name="lidar_zone_radius" value="5.0" />
-    <xacro:property name="lidar_zone_thickness" value="0.002" />
-
-    <material name="red_transparent">
-        <color rgba="1.0 0.0 0.0 0.15" />
-    </material>
-
-    <link name="lidar_zone_link">
-        <visual>
-            <geometry>
-                <cylinder radius="${lidar_zone_radius}" length="${lidar_zone_thickness}" />
-            </geometry>
-            <material name="red_transparent" />
-        </visual>
-        <!-- Gazebo yêu cầu mọi Link phải có khối lượng, nên ta cho số cực nhỏ -->
-        <inertial>
-            <mass value="0.001" />
-            <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7" />
-        </inertial>
-    </link>
-
-    <joint name="lidar_zone_joint" type="fixed">
-        <parent link="lidar_link" />
-        <child link="lidar_zone_link" />
-        <origin xyz="0 0 0" rpy="0 0 0" />
-    </joint>
-
-    <!-- Định nghĩa màu bán trong suốt cho Gazebo (Vì Gazebo không đọc thẻ <material> của URDF) -->
-    <gazebo reference="lidar_zone_link">
-        <visual>
-            <material>
-                <!-- Tham số Alpha (số cuối cùng) là 0.15 để tạo độ trong suốt -->
-                <ambient>1.0 0.0 0.0 0.15</ambient>
-                <diffuse>1.0 0.0 0.0 0.15</diffuse>
-                <specular>0.1 0.1 0.1 1.0</specular>
-            </material>
-        </visual>
-    </gazebo>
-
-    <!-- 3. Gắn Plugin Cảm biến Lidar ảo (gpu_lidar) vào Gazebo -->
     <gazebo reference="lidar_link">
-        <sensor name="gpu_lidar" type="gpu_lidar">
-            <!-- Tốc độ quét: 10 Hz (10 vòng/giây) -->
-            <update_rate>10</update_rate>
-            <!-- Phát dữ liệu đo đạc lên Topic tên là 'scan' -->
-            <topic>scan</topic>
-            <gz_frame_id>lidar_link</gz_frame_id>
+        <sensor name="gpu_lidar" type="gpu_lidar">   <!--loai gpu_lidar -> dung gpu de tinh toan va cham cua cac tia laser thay vi dung CPU (tranh giat lag)-->
+            <always_on>true</always_on>   <!--luon luon chay-->
+            <visualize>true</visualize>  <!--hien thi mau sac-->
+            <update_rate>10</update_rate>  <!--tan so quet 10 lan / giay -->
+
+            <topic>scan</topic>   <!--phat du lieu len scan-->
+            <gz_frame_id>lidar_link</gz_frame_id>  <!--tia laser duoc phat ra tu lidar_link-->
+
             <lidar>
                 <scan>
                     <horizontal>
-                        <samples>360</samples>          <!-- 360 điểm ảnh mỗi vòng -->
-                        <resolution>1</resolution>  
-                        <min_angle>-3.14159</min_angle> <!-- Quét từ -180 độ... -->
-                        <max_angle>3.14159</max_angle>  <!-- ...đến +180 độ (Tổng 360 độ) -->
+                        <samples>360</samples> <!--quet 360 tia laser-->
+                        <resolution>1</resolution> <!--moi tia cach 1 do-->
+                        <min_angle>-3.14159</min_angle>  <!--goc quet nho nhat-->
+                        <max_angle>3.14159</max_angle>  <!--goc quet lon nhat-->
                     </horizontal>
                 </scan>
+
                 <range>
-                    <min>0.15</min>        <!-- Khoảng cách gần nhất phát hiện được (Điểm mù) -->
-                    <max>5.0</max>         <!-- Khoảng cách xa nhất (5 mét) -->
-                    <resolution>0.01</resolution> <!-- Sai số độ phân giải -->
+                    <min>0.15</min>  <!--khoang cach nho nhat 15cm-->
+                    <max>5.0</max>  <!--khoang cach lon nhat 5m-->
+                    <resolution>0.01</resolution>  <!--do phan giai cua khoang cach-->
                 </range>
-                <!-- Thêm nhiễu Gauss (Gaussian noise) để mô phỏng sự thiếu hoàn hảo của cảm biến thật -->
+
                 <noise>
                     <type>gaussian</type>
                     <mean>0.0</mean>
-                    <stddev>0.01</stddev> <!-- Độ lệch chuẩn 1cm -->
+                    <stddev>0.01</stddev>  <!--them nhieu sai so 1cm, giong thuc te de AMCL,SLAM xu ly loc nhieu-->
                 </noise>
+
             </lidar>
-            <always_on>true</always_on>
-            <!-- Hiển thị tia laser màu xanh trong Gazebo (để dễ debug) -->
-            <visualize>true</visualize>
+           
         </sensor>
     </gazebo>
 
 </robot>
 ```
 
-*(Hãy nhớ mở file `my_robot.urdf.xacro` gốc ra và gọi `<xacro:include filename="lidar.xacro"/>` vào nhé!)*
+Sau đó mở đầu file `urdf/amr.urdf.xacro` và thêm dòng nhúng `lidar.xacro`:
+
+```xml
+<robot name="amr_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find amr_description)/urdf/lidar.xacro"/>
+  <xacro:include filename="$(find amr_description)/urdf/gazebo_sim_controll.xacro"/>
+```
 
 ---
 
-## 3. Cập nhật Bridge để truyền dữ liệu LiDAR
+## 4. Cập nhật Cầu nối `config/gazebo_bridge.yaml`
 
-Gazebo đang phát kết quả quét lên topic có tên `/scan` (với kiểu dữ liệu `gz.msg.LaserScan`). Chúng ta cần mở file `config/gazebo_bridge.yaml` đã tạo ở [Tutorial 21](/posts/2026/11/ros2-tutorial-21/), và bổ sung thêm đoạn cầu nối này để đẩy dữ liệu về ROS 2:
+Gazebo phát dữ liệu quét laser lên topic `/scan` với kiểu `gz.msgs.LaserScan`. Mở file `config/gazebo_bridge.yaml` (từ commit `V2`) và nối thêm khối `/scan` vào cuối file:
 
 ```yaml
-# ... (Các cấu hình cmd_vel, tf, joint_states đã có) ...
+# ... (5 khối /clock, /cmd_vel, /odom, /tf, /joint_states đã có ở Tutorial 21) ...
 
-# Cầu nối dữ liệu Lidar (LaserScan)
 - ros_topic_name: "/scan"
   gz_topic_name: "/scan"
   ros_type_name: "sensor_msgs/msg/LaserScan"
-  gz_type_name: "gz.msg.LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
   direction: GZ_TO_ROS
 ```
 
 ---
 
-## 4. Hiển thị LaserScan trên RViz2
+## 5. Kiểm tra và Hiển thị `LaserScan` trên RViz2
 
-1. **Khởi chạy lại hệ thống:**
+1. **Build và khởi chạy mô phỏng:**
    ```bash
-   ros2 launch my_mobilerobot gazebo.launch.xml
+   cd ~/amr_ws
+   colcon build --packages-select amr_description
+   source install/setup.bash
+   ros2 launch amr_description gazebo.launch.xml
    ```
-2. Lúc này, trong Gazebo bạn sẽ thấy một vòng tròn đỏ lớn 5m bao quanh xe, kèm theo các tia sáng màu xanh lam nếu chúng quét trúng tường/vật cản.
-3. **Để xem điểm quét trên RViz2:**
-   * Nhấn nút **Add** ở góc dưới bên trái.
-   * Chọn mục **By Topic**.
-   * Chọn Topic `/scan` (Loại **LaserScan**).
-   * *(Mẹo)* Bạn có thể thay đổi mục **Size** (trong thẻ `LaserScan` bên cột trái) lên mức `0.05m` để các điểm hiển thị to và rõ ràng hơn.
-
-Bây giờ, hãy mở Terminal điều khiển phím (`teleop`), lái xe đi vòng quanh nhà kho và quan sát các chấm đỏ trên RViz thay đổi hình dáng khớp với các bức tường nhé!
+2. **Hiển thị điểm quét LiDAR trên RViz2:**
+   * Nhấn nút **Add** ở góc dưới bên trái RViz2 → chọn tab **By Topic**.
+   * Tìm đến `/scan` và chọn **LaserScan**.
+   * *(Mẹo)* Tăng mục **Size (m)** trong thuộc tính của `LaserScan` lên `0.03` – `0.05` để các điểm chấm đỏ hiện rõ dọc theo các kệ hàng trong nhà kho!
 
 ---
 
