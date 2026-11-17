@@ -109,65 +109,47 @@ Nếu bạn mở Terminal tích hợp bên trong VS Code (cài qua Snap trên Ub
 
 ---
 
-## 4. Mã nguồn `launch/gazebo.launch.xml` (Giai đoạn Spawn Robot)
+## 4. Mã nguồn `launch/gazebo.launch.xml` (Commit V1 – Giai đoạn Spawn Robot)
 
-Dưới đây là toàn bộ nội dung file `amr_description/launch/gazebo.launch.xml` trong dự án `amr_ws` ở giai đoạn **Spawn mô hình vào Gazebo** (các khối `ros_gz_bridge` và `amr_controller` được đóng chú thích lại để dành cho các bài tiếp theo):
+Dưới đây là toàn bộ nội dung file `amr_description/launch/gazebo.launch.xml` trong dự án `amr_ws` (commit `V1-rviz+spawn gazebo`) ở giai đoạn **Spawn mô hình vào Gazebo** (chưa sử dụng plugin điều khiển hay `ros_gz_bridge`):
 
 ```xml
 <launch>
-    <!-- 1. Khai báo các tham số đầu vào (Arguments) -->
     <arg name="use_gazebo" default="true"/>
-    <arg name="launch_rviz" default="true"/>
+    <arg name="use_rviz" default="true"/>
     <arg name="use_sim_time" default="true"/>
 
-    <!-- 2. Xóa các biến môi trường GTK do VS Code SNAP tiêm vào -->
-    <set_env name="GTK_PATH" value=""/>
-    <set_env name="GTK_EXE_PREFIX" value=""/>
-    <set_env name="GTK_IM_MODULE_FILE" value=""/>
-    <set_env name="GIO_MODULE_DIR" value=""/>
-    <set_env name="LOCPATH" value=""/>
-
-    <!-- 3. Khai báo đường dẫn tài nguyên 3D (models nhà kho & meshes của gói amr_description) -->
+    <!-- Trỏ đường dẫn tài nguyên -->
     <set_env name="GZ_SIM_RESOURCE_PATH" value="/home/pc/amr_ws/src/amr_description/models:/home/pc/amr_ws/src"/>
 
-    <!-- 4. Tạo các biến đường dẫn tới file URDF/Xacro và cấu hình RViz2 -->
     <let name="urdf_path" value="$(find-pkg-share amr_description)/urdf/amr.urdf.xacro"/>
-    <let name="rviz_config_path" value="$(find-pkg-share amr_description)/rviz/config.rviz"/> 
-    <!-- <let name="gazebo_config_path" value="$(find-pkg-share amr_description)/config/gazebo_bridge.yaml"/> -->
+    <let name="rviz_config_path" value="$(find-pkg-share amr_description)/rviz/config.rviz"/>
 
-    <!-- 5. Khởi chạy robot_state_publisher: đọc file Xacro và phát lên topic /robot_description -->
     <node pkg="robot_state_publisher" exec="robot_state_publisher">
-        <param name="robot_description" value="$(command 'xacro $(var urdf_path) use_gazebo:=true')"/>
-        <param name="use_sim_time" value="true"/>
+        <param name="robot_description" value="$(command 'xacro $(var urdf_path)')"/>
+        <param name="use_sim_time" value="$(var use_sim_time)"/>
     </node>
 
-    <!-- 6. Khởi chạy Gazebo Sim với bản đồ nhà kho (small_warehouse.world) -->
-    <!-- Cờ '-r' giúp Gazebo tự động chạy mô phỏng vật lý ngay khi mở -->
+    <!-- Khởi động Gazebo -->
     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
         <arg name="gz_args" value="$(find-pkg-share amr_description)/worlds/small_warehouse.world -r"/>
     </include>
-
-    <!-- 7. Spawn (thả) robot từ topic robot_description vào thế giới Gazebo ở độ cao z = 0.1m -->
-    <node pkg="ros_gz_sim" exec="create" args="-topic robot_description -name amr_description -z 0.1"/>
-
-    <!-- [Sẽ mở khóa ở Tutorial 21] Cầu nối ROS 2 <-> Gazebo -->
-    <!-- <node pkg="ros_gz_bridge" exec="parameter_bridge" output="screen">
-        <param name="config_file" value="$(var gazebo_config_path)"/>
-        <param name="use_sim_time" value="true"/>
-    </node> -->
-
-    <!-- [Sẽ mở khóa ở giai đoạn Điều khiển] Nạp ros2_control + spawn controller -->
-    <!-- <include file="$(find-pkg-share amr_controller)/launch/controller.launch.xml">
-        <arg name="use_gazebo" value="true"/>
-        <arg name="use_sim_time" value="true"/>
-        <arg name="launch_rviz" value="true"/>
-    </include> -->
-
-    <!-- 8. Khởi chạy giao diện RViz2 -->
-    <node pkg="rviz2" exec="rviz2" output="screen" args="-d $(var rviz_config_path)" if="$(var launch_rviz)">  
+    <!-- Spawn robot -->
+    <node pkg="ros_gz_sim" exec="create" output="screen" args="-topic robot_description -name amr_description -z 0.1">
         <param name="use_sim_time" value="$(var use_sim_time)"/>
     </node>
+
+    <node pkg="rviz2" exec="rviz2" name="rviz2" output="screen" args="-d $(var rviz_config_path)" if="$(var use_rviz)">
+        <param name="use_sim_time" value="$(var use_sim_time)"/>   
+    </node>
+
 </launch>
+<!-- 
+Include gazebo + Chay 3 node:
++)robot_state_publisher -> truyen tham so robot_description tu duong dan toi file urdf (node nhan chuoi xml de mo ta,tinh toan vi tri, phat ra TF
++)ros_gz_sim -> spawn robot vao gazebo (node nhan chuoi xml de mo ta, spawn robot vao gazebo)
++)rviz2 -> hien thi robot   
+-->
 ```
 
 ---
