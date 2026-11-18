@@ -5,7 +5,7 @@ permalink: /posts/2026/11/ros2-tutorial-30/
 author_profile: true
 ---
 
-[⬅ Quay lại bài: Động học, Odometry và Điều khiển Robot (ros2_control)](/posts/2026/11/dong-hoc-odometry-ros2-control/)
+[⬅ Quay lại bài: Động học, Odometry và Điều khiển Robot (ros2_control)](/posts/2026/11/dong-hoc-odometry-ros2-control/) | [⬅ Bài trước: Tutorial 28 - Tiêu chuẩn /cmd_vel & Lập trình Node Teleop](/posts/2026/11/ros2-tutorial-28/)
 
 ---
 
@@ -281,4 +281,4 @@ ros2 topic pub /simple_velocity_controller/commands std_msgs/msg/Float64MultiArr
 
 ---
 
-[⬅ Quay lại bài: Động học, Odometry và Điều khiển Robot (ros2_control)](/posts/2026/11/dong-hoc-odometry-ros2-control/)
+[⬅ Quay lại bài: Động học, Odometry và Điều khiển Robot (ros2_control)](/posts/2026/11/dong-hoc-odometry-ros2-control/) | [⬅ Bài trước: Tutorial 28 - Tiêu chuẩn /cmd_vel & Lập trình Node Teleop](/posts/2026/11/ros2-tutorial-28/)
